@@ -30,6 +30,10 @@ def q4():
 
 #5. Faça um programa que leia dois números reais e os imprima.
 def q5():
+    print("-q5")
+    num1=float(input("digite o primeiro numero: "))
+    num2=float(input("digite o segundo numero: "))
+    print(f"o primeiro numero é {num1} e o segundo é {num2}")
     
 
 #6. Faça um programa que leia um número inteiro e imprima o seu
