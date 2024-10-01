@@ -6,7 +6,7 @@ Exercícios sobre os comandos básicos em Python
 def q1():
     nome = "Kaline"
     print ('-q1')
-    print(f'{nome}')
+    #print(f'{nome}')
     print(nome)
 
 
@@ -38,9 +38,14 @@ def q5():
 
 #6. Faça um programa que leia um número inteiro e imprima o seu
 #   antecessor e o seu sucessor.
+def q6():
+    print("-q6")
+    num1=int(input("digite um número inteiro: "))
+    print(f"O número antecessor é {num1-1} e o sussessor é {num1+1}")
 
 #7. Faça um programa que leia o nome o endereço e o telefone de
 #   um cliente e ao final, imprima esses dados.
+
 
 #8. Faça um programa que leia dois números inteiros e imprima a
 #   subtração deles.
@@ -105,7 +110,4 @@ def q5():
 #    em real (R$) de um valor lido em dólar (US$). Para isso, será
 #    necessário também ler o valor da cotação do dólar.
 
-q1()
-q2()
-q3()
-q4()
+q6()
