@@ -85,10 +85,7 @@ def q10():
 def q11():
     num1=float(input("Insira o primeiro número: "))
     num2=float(input("Insira o segundo número: "))
-    print(f"{num1} + {num2} = {num1+num2}")
-    print(f"{num1} - {num2} = {num1-num2}")
-    print(f"{num1} * {num2} = {num1*num2}")
-    print(f"{num1} / {num2} = {num1/num2}")
+    print(f"{num1} + {num2} = {num1+num2}\n{num1} - {num2} = {num1-num2}\n{num1} * {num2} = {num1*num2}\n{num1} / {num2} = {num1/num2}")
 
 #12. Faça um programa que leia um número real e calcule o
 #    quadrado deste número. Ao final, o programa deve
@@ -102,25 +99,44 @@ def q12():
 def q13():
     saldo=float(input("Insira o saldo da poupança: "))
     print(f"O saldo de {saldo} foi atualizado para {saldo+(saldo*2)/100} com o reajuste de 2%.")
-q13()
+    #ou saldo+(saldo*0.02)
 
 #14. Faça um programa que leia a base e a altura de um retângulo
 #    e imprima o perímetro (base + altura) e a área (base * altura / 2).
 
+####### Perimetro: (b+a)*2 ######## Area: b*a #########
+def q14():
+    base=float(input('Insira a base do retângulo: '))
+    altura=float(input('Insira a altura do retângulo: '))
+    print(f'Perímetro: {(base+altura)*2} \nÁrea: {base*altura}')
+
 #15. Faça um programa que leia o valor de um produto, o percentual
 #    do desconto desejado e imprima o valor do desconto e o valor
 #    do produto subtraindo o desconto.
+def q15():
+    valor=float(input('Insira o valor do produto: '))
+    desconto=float(input('Insira o % de desconto desejado: '))
+    print(f'Valor do desconto: {valor*(desconto/100)} \nValor do produto com desconto: {valor-(valor*(desconto/100))}')
 
 #16. Faça um programa que calcule o reajuste do salário de um
 #    funcionário. Para isso, o programa deverá ler o salário atual
 #    do funcionário e ler o percentual de reajuste. Ao final imprimir
 #    o valor do novo salário.
+def q16():
+    salario=float(input('Insira o valor do salário atual: '))
+    reajuste=float(input('Insira o % de reajuste: '))
+    print(f'Valor do salário com reajuste: {salario+(salario*(reajuste/100))}')
 
 #17. Faça um programa que calcule a conversão entre graus centígrados
 #    e Fahrenheit. Para isso, leia o valor em centígrados e calcule
 #    com base na fórmula a seguir. Após calcular o programa deve
 #    imprimir o resultado da conversão.
 #    F = (9 x C + 160) / 5
+
+###### F = (C × 9/5) + 32
+def q17():
+    c=float(input('Insira o valor em centígrados: ')) 
+    print(f'{c}ºC, em Fahrenheit é : {(c*(9/5))+32}ºF')
 
 #18. Faça um programa que calcule a quantidade de litros de combustível
 #    consumidos em uma viagem, sabendo-se que o carro tem autonomia de
@@ -134,6 +150,8 @@ q13()
 #    • L = Litros de combustível consumidos
 #    Ao final, o programa deverá imprimir a distância percorrida e a
 #    quantidade de litros consumidos na viagem.
+def q18():
+    
 
 #19. Faça um programa que calcule o valor de uma prestação em atraso.
 #    Para isso, o programa deve ler o valor da prestação vencida, a
@@ -141,9 +159,11 @@ q13()
 #    programa deve imprimir o valor da prestação atrasada, o período
 #    de atraso, os juros que serão cobrados pelo período de atraso, o
 #    valor da prestação acrescido dos juros. Considere juros simples.
+def q19():
+
 
 #20. Faça um programa que efetue a apresentação do valor da conversão
 #    em real (R$) de um valor lido em dólar (US$). Para isso, será
 #    necessário também ler o valor da cotação do dólar.
-
+def q20():
 
