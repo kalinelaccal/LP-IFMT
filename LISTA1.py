@@ -151,7 +151,11 @@ def q17():
 #    Ao final, o programa deverá imprimir a distância percorrida e a
 #    quantidade de litros consumidos na viagem.
 def q18():
-    
+    tempo=float(input('Insira o tempo decorrido na viagem (horas): '))
+    velocidade=float(input('Insira a velocidade média (km/h): '))
+    distancia=tempo*velocidade
+    litros= distancia/12
+    print(f'Foram consumidos {litros} litros de conbustível, considerando consumo de 12km/L.')
 
 #19. Faça um programa que calcule o valor de uma prestação em atraso.
 #    Para isso, o programa deve ler o valor da prestação vencida, a
@@ -160,10 +164,18 @@ def q18():
 #    de atraso, os juros que serão cobrados pelo período de atraso, o
 #    valor da prestação acrescido dos juros. Considere juros simples.
 def q19():
-
+    valor=float(input('Insira o valor da prestação vencida (R$): '))
+    taxa=float(input('Insira a taxa periódica de juros (%): '))
+    atraso=int(input('Insira o período de atraso (meses): '))
+    juros=valor*(taxa/100)*atraso
+    print(f'A prestação de R${valor} está vencida a {atraso} meses, somando R${juros}. \nO valor atual é de R${valor+juros}')
 
 #20. Faça um programa que efetue a apresentação do valor da conversão
 #    em real (R$) de um valor lido em dólar (US$). Para isso, será
 #    necessário também ler o valor da cotação do dólar.
 def q20():
+    valor=float(input('Insira o valor em Dolar (U$):'))
+    cotação=float(input('Insira o valor da cotação do Dolar (R$):'))
+    print(f'U${valor} = R${valor*cotação}')
+q20()
 
