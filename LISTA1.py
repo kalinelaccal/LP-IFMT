@@ -177,5 +177,5 @@ def q20():
     valor=float(input('Insira o valor em Dolar (U$):'))
     cotação=float(input('Insira o valor da cotação do Dolar (R$):'))
     print(f'U${valor} = R${valor*cotação}')
-q20()
+
 
