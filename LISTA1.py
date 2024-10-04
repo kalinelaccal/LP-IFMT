@@ -20,7 +20,7 @@ def q2():
 def q3():
     print ('-q3')
     media = (5+8+12)/3
-    print (media)
+    print (round((media),2))
 
 #4. Faça um programa que leia e imprima um número inteiro.
 def q4():
@@ -66,8 +66,7 @@ def q8():
 #9. Faça um programa que leia um número real e imprima ¼ deste número.
 def q9():
     num1=float(input("Insira um número real: "))
-    print(f"1/4 de {num1} é igual a {num1/4}")
-
+    print(f"1/4 de {num1} é igual a {round(num1/4,2)}")
 
 #10. Faça um programa que leia três números reais e calcule a
 #    média aritmética destes números. Ao final, o programa deve
@@ -179,3 +178,6 @@ def q20():
     print(f'U${valor} = R${valor*cotação}')
 
 
+#\t = tabulação
+#\n = pula linha
+#round(numero),1 =arredonda para 1 casa apos a virgula
