@@ -104,7 +104,14 @@ def q9():
 
 #10. Faça um programa que leia três números inteiros e imprima os três em ordem
 #crescente.
-
+def q10():
+    num1 = int(input('1º Número: '))
+    num2 = int(input('2º Número: '))
+    num3 = int(input('3º Número: '))
+    lista = [num1, num2, num3]    
+    lista.sort()
+    print(lista)
+#q10()
 
 #11. Faça um programa que leia 3 números e imprima o maior deles.
 
