@@ -43,7 +43,7 @@ def q4():
 
 #5. Faça um programa que leia um número e informe se ele é divisível por 3 e por 7.
 def q5():
-    num=int(input('Insira um número: '))
+    num = int(input('Insira um número: '))
     if ((num%3)==0) and ((num%7)==0):
         print(f'{num} é divisível por 3 e 7.')
     elif ((num%3)==0) and ((num%7)!=0):
@@ -59,20 +59,52 @@ def q5():
 #   bruto. Faça um programa que permita entrar com o salário bruto
 #   e o valor da prestação e informar se o empréstimo pode ou não ser concedido.
 def q6():
-    
+    salario = round(float(input("Insira o salário bruto: R$")),2)
+    prestaçao = round(float(input('Insira o valor da prestação: R$')),2)
+    percent = (prestaçao*100)/salario
+    if (percent > 30):
+        print(f'Valor superior a 30% do salario bruto. O impréstimo não pode ser concedido.')
+    else:
+        print('Impréstimo autorizado.')    
+#q6()
 
 #7. Faça um programa que leia um número e indique se o número está compreendido
 #   entre 20 e 50 ou não.
+def q7():
+    num = int(input('Insira um número: '))
+    if (20 <= num <= 50):
+        print(f'{num} está entre 20 e 50.')
+    else:
+        print(f'{num} não está entre 20 e 50.')
+#q7()
 
 #8. Faça um programa que leia um número e imprima uma das mensagens:
 #   "Maior do que 20", "Igual a 20"ou "Menor do que 20".
+def q8():
+    num = int(input('Insira um número: '))
+    if (num < 20):
+        print(f'{num} é menor que 20.')
+    elif (num == 20):
+        print(f'{num} é igual a 20.')
+    elif (num > 20):
+        print (f'{num} é maior que 20.')
+#q8()
 
 #9. Faça um programa que permita entrar com o ano de nascimento da pessoa e com o
 #   ano atual. O programa deve imprimir a idade da pessoa. Não se esqueça de
 #   verificar se o ano de nascimento informado é válido.
+def q9():
+    nasc = int(input('Insira o ano de nascimento: '))
+    ano = int(input('Insira o ano atual: '))
+    if (nasc <= ano):
+        print(f'{ano-nasc} anos.')
+    else:
+        print('Dados inválidos.')
+#q9()
 
 #10. Faça um programa que leia três números inteiros e imprima os três em ordem
 #crescente.
+
 
 #11. Faça um programa que leia 3 números e imprima o maior deles.
 
