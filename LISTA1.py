@@ -101,7 +101,7 @@ def q13():
     #ou saldo+(saldo*0.02)
 
 #14. Faça um programa que leia a base e a altura de um retângulo
-#    e imprima o perímetro (base + altura) e a área (base * altura / 2).
+#    e imprima o perímetro (base + altura)*2 e a área (base * altura).
 
 ####### Perimetro: (b+a)*2 ######## Area: b*a #########
 def q14():
@@ -181,3 +181,4 @@ def q20():
 #\t = tabulação
 #\n = pula linha
 #round(numero),1 =arredonda para 1 casa apos a virgula
+#{num1**2} ou {pow(numero,2)} = potencia
