@@ -185,7 +185,8 @@ def q20():
 
 ### para salvar:
 ### git add *.py
-### git commit -m 'o que foi atualizado'
+### git commit -m 'o que foi atualizado' = para colocar em todos os arquivos editados
+### git commit 'nome do arquivo' = para colocar apenas em um arquivo
 ### git push
 
 ### git status = pra saber o status
