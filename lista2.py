@@ -145,6 +145,8 @@ def q12():
 def q13():
     nome = input('Nome: ')
     nota1 = float(input('Nota da prova 1:'))
+    nota2 = float(input('Nota da prova 2:'))
+    
 
 
 
