@@ -135,13 +135,18 @@ def q12():
         print(f'É menor.')
     elif (idade > 65):
         print('É maior de 65.')
-q12()
+#q12()
 
 #13. Faça um programa que permita entrar com o nome, a nota da prova 1 e a nota
 #da prova 2 de um aluno. O programa deve imprimir o nome, a nota da prova 1,
 #a nota da prova 2, a média das notas e uma das mensagens: "Aprovado",
 #"Reprovado"ou "em Prova Final"(a média é 7 para aprovação, menor que 3 para
 #reprovação e as demais em prova final).
+def q13():
+    nome = input('Nome: ')
+    nota1 = float(input('Nota da prova 1:'))
+
+
 
 #14. Faça um programa que permita entrar com o salário de uma pessoa e imprima o
 #desconto do INSS segundo a tabela seguir:
@@ -239,3 +244,63 @@ q12()
 #0,3 1º grupo
 #0,4 1º e 2º grupos
 #0,5 1º, 2º e 3º grupos
+
+
+questao = int(input('Qual questão executar? '))
+eval(f'q{questao}()')
+# match questao:
+#     case 1:
+#         q1 ()
+#     case 2:
+#         q2 ()
+#     case 3:
+#         q3 ()
+#     case 4:
+#         q4 ()
+#     case 5:
+#         q5 ()
+#     case 6:
+#         q6 ()
+#     case 7:
+#         q7 ()
+#     case 8:
+#         q8 ()
+#     case 9:
+#         q9 ()
+#     case 10:
+#         q10 ()
+#     case 11:
+#         q11 ()
+#     case 12:
+#         q12 ()
+#     case 13:
+#         q13 ()
+#     case 14:
+#         q14 ()
+#     case 15:
+#         q15 ()
+#     case 16:
+#         q16 ()
+#     case 17:
+#         q17 ()
+#     case 18:
+#         q18 ()
+#     case 19:
+#         q19 ()
+#     case 20:
+#         q20 ()
+#     case 21:
+#         q21 ()
+#     case 22:
+#         q22 ()
+#     case 23:
+#         q23 ()
+#     case 24:
+#         q24 ()
+#     case 25:
+#         q25 ()
+#     case _:
+#         print ('Questão inválida!')
+
+
+#eval = avalia a string como comando python
