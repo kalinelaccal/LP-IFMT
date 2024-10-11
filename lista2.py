@@ -265,6 +265,17 @@ def q18():
 #• Mostrar esses valores em ordem decrescente;
 #• Se a soma dos pontos for maior do que 100, imprimir a média aritmética entre eles,
 #  caso contrário, imprimir a mensagem "Equipe desclassificada".
+def q19():
+    j1 = int(input('Pontuação Jogador 1: '))
+    j2 = int(input('Pontuação Jogador 2: '))
+    j3 = int(input('Pontuação Jogador 3: '))
+    lista = [j1, j2, j3]
+    lista.sort(reverse=True)
+    print (f'1º: {lista[0]} \n2º: {lista[1]} \n3º: {lista[2]}')
+    if (j1+j2+j3) > 100:
+        print(f'Média da equipe: {(j1+j2+j3)/3}')
+    else:
+        print ('Equipe desclassificada!')
 
 
 #20. O banco XXX concederá um crédito especial com juros de 2% aos seus clientes de
