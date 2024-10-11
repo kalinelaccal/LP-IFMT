@@ -1,3 +1,6 @@
+from datetime import date, datetime
+hoje = datetime.now()
+
 #1. Faça um programa que leia dois valores numéricos inteiros e efetue
 #   a adição, caso o resultado seja maior que 10, apresentá-lo.
 def q1():
@@ -6,7 +9,6 @@ def q1():
     adc=(num1+num2)
     if(adc > 10):
         print(f'{adc} é maior que 10.')
-#q1()
 
 #2. Faça um programa que leia dois valores inteiros e efetue a adição.
 #   Caso o valor somado seja maior que 20, este deverá ser apresentado
@@ -20,7 +22,6 @@ def q2():
         print(f'{adc} + 8 = {adc+8}')
     elif(adc <= 20):
         print(f'{adc} - 5 = {adc-5}')
-#q2()
 
 #3. Faça um programa que leia um número e imprima uma das duas mensagens:
 #   "É múltiplo de 3"ou "Não é múltiplo de 3".
@@ -30,7 +31,6 @@ def q3():
         print(f'{num} é múltiplo de 3.')
     else:
         print(f'{num} não é múltiplo de 3.')
-#q3()
 
 #4. Faça um programa que leia um número e informe se ele é ou não divisível por 5.
 def q4():
@@ -39,7 +39,6 @@ def q4():
         print(f'{num} é divisível por 5.')
     else:
         print(f'{num} não é divisível por 5.')
-#q4()
 
 #5. Faça um programa que leia um número e informe se ele é divisível por 3 e por 7.
 def q5():
@@ -52,7 +51,6 @@ def q5():
         print(f'{num} é divisível por 7 mas não por 3.')
     elif ((num%3)!=0) and ((num%7)!=0):
         print(f'{num} não é divisível por 3 nem por 7.')
-#q5()
 
 #6. A prefeitura do Rio de Janeiro abriu uma linha de crédito para os funcionários
 #   estatutários. O valor máximo da prestação não poderá ultrapassar 30% do salário
@@ -66,7 +64,6 @@ def q6():
         print(f'Valor superior a 30% do salario bruto. O impréstimo não pode ser concedido.')
     else:
         print('Impréstimo autorizado.')    
-#q6()
 
 #7. Faça um programa que leia um número e indique se o número está compreendido
 #   entre 20 e 50 ou não.
@@ -76,7 +73,6 @@ def q7():
         print(f'{num} está entre 20 e 50.')
     else:
         print(f'{num} não está entre 20 e 50.')
-#q7()
 
 #8. Faça um programa que leia um número e imprima uma das mensagens:
 #   "Maior do que 20", "Igual a 20"ou "Menor do que 20".
@@ -88,19 +84,18 @@ def q8():
         print(f'{num} é igual a 20.')
     elif (num > 20):
         print (f'{num} é maior que 20.')
-#q8()
 
 #9. Faça um programa que permita entrar com o ano de nascimento da pessoa e com o
 #   ano atual. O programa deve imprimir a idade da pessoa. Não se esqueça de
 #   verificar se o ano de nascimento informado é válido.
 def q9():
     nasc = int(input('Insira o ano de nascimento: '))
-    ano = int(input('Insira o ano atual: '))
-    if (nasc <= ano):
-        print(f'{ano-nasc} anos.')
+#    ano = int(input('Insira o ano atual: '))
+#    if (nasc <= ano):
+    if (nasc <= hoje.year): #hoje.year = biblioteca importada antes da q1()
+        print(f'{hoje.year-nasc} anos.')
     else:
         print('Dados inválidos.')
-#q9()
 
 #10. Faça um programa que leia três números inteiros e imprima os três em ordem
 #crescente.
@@ -111,7 +106,6 @@ def q10():
     lista = [num1, num2, num3]    
     lista.sort()
     print(lista)
-#q10()
 
 #11. Faça um programa que leia 3 números e imprima o maior deles.
 def q11():
@@ -121,7 +115,6 @@ def q11():
     lista = [num1, num2, num3]    
     lista.sort()
     print(f'{lista[2]} é o maior número.')
-#q11()
 
 #12. Faça um programa que leia a idade de uma pessoa e informe:
 #• Se é maior de idade
@@ -135,7 +128,6 @@ def q12():
         print(f'É menor.')
     elif (idade > 65):
         print('É maior de 65.')
-#q12()
 
 #13. Faça um programa que permita entrar com o nome, a nota da prova 1 e a nota
 #da prova 2 de um aluno. O programa deve imprimir o nome, a nota da prova 1,
@@ -146,9 +138,13 @@ def q13():
     nome = input('Nome: ')
     nota1 = float(input('Nota da prova 1:'))
     nota2 = float(input('Nota da prova 2:'))
-    
-
-
+    media = (nota1 + nota2)/2
+    if (media >= 7):
+        print (f'Aprovado com média {media}.')
+    elif (7 > media >= 3):
+        print (f'Média: {media}. \nProva final.')
+    else:
+        print (f'Média {media}. \nReprovado.')
 
 #14. Faça um programa que permita entrar com o salário de uma pessoa e imprima o
 #desconto do INSS segundo a tabela seguir:
@@ -157,10 +153,25 @@ def q13():
 #Maior que R$600,00 e menor ou igual a R$1200,00 20%
 #Maior que R$1200,00 e menor ou igual a R$2000,00 25%
 #Maior que R$2000,00 30%
-
+def q14():
+    salario = float(input('Insira o salário em R$: '))
+    if (salario <= 600):
+        print(f'Salário: {salario}. \nDesconto INSS: Isento.')
+    elif (600 < salario <= 1200):
+        print (f'Salário: {salario}. \nDesconto INSS: 20%.')
+    elif (1200 < salario <= 2000):
+        print (f'Salário: {salario}. \nDesconto INSS: 25%.')
+    else:
+        print (f'Salário: {salario}. \nDesconto INSS: 30%.')
 #15. Um comerciante comprou um produto e quer vendê-lo com um lucro de 45% se o
 #valor da compra for menor que R$20,00, caso contrário, o lucro será de 30%.
 #Faça um programa que leia o valor do produto e imprima o valor da venda.
+def q15():
+    custo = float(input('Insira custo do produto: R$'))
+    if (custo < 20):
+        print(f'{custo} + 45% = {custo + (custo*0.45)}')
+    else:
+        print(f'{custo} + 30% = {custo + (custo*0.30)}')
 
 #16. A confederação brasileira de natação irá promover eliminatórias para o
 #próximo mundial. Faça um programa que receba a idade de um nadador e imprima
@@ -171,6 +182,20 @@ def q13():
 #Juvenil A 11 - 13 anos
 #Juvenil B 14 - 17 anos
 #Sênior maiores de 18 anos
+def q16():
+    idade = int(input('Insira a idade: '))
+    if ( 5 <= idade <= 7):
+        print (f'Categoria: Infantil A.')
+    elif ( 8 <= idade <= 10):
+        print (f'Categoria: Infantil B.')
+    elif ( 11 <= idade <= 13):
+        print (f'Categoria: Juvenil A.')
+    elif ( 14 <= idade <= 17):
+        print (f'Categoria: Juvenil B.')
+    elif ( 18 <= idade):
+        print (f'Categoria: Sênior.')
+    else: 
+        print (f'Não compete.')
 
 #17. Depois da liberação do governo para as mensalidades dos planos de saúde,
 #as pessoas começaram a fazer pesquisas para descobrir um bom plano, não
@@ -184,10 +209,53 @@ def q13():
 #Acima de 45 até 59 anos R$150,00
 #Acima de 59 até 65 anos R$250,00
 #Maior que 65 anos R$400,00
+def q17():
+    nome = input('Nome: ')
+    idade = int(input('Idade: '))
+    if (idade <= 10):
+        print (f'Nome: {nome} \nValor: R$30.00')
+    elif (10 < idade <= 29 ):
+        print (f'Nome: {nome} \nValor: R$60.00')
+    elif (29 < idade <= 45 ):
+        print (f'Nome: {nome} \nValor: R$120.00')
+    elif (45 < idade <= 59 ):
+        print (f'Nome: {nome} \nValor: R$150.00')
+    elif (59 < idade <= 65 ):
+        print (f'Nome: {nome} \nValor: R$250.00')
+    else:
+        print (f'Nome: {nome} \nValor: R$400.00')
 
 #18. Faça um programa que leia um número inteiro entre 1 e 12 e escreva o mês
 #correspondente. Caso o usuário digite um número fora desse intervalo, deverá
 #aparecer uma mensagem informando que não existe mês com este número.
+def q18():
+    mes = int(input('Insira o número do mês (de 1 a 12): '))
+    if (mes == 1):
+        print ('Janeiro')
+    elif (mes == 2):
+        print ('Fevereiro')
+    elif (mes == 3):
+        print ('Março')
+    elif (mes == 4):
+        print ('Abril')
+    elif (mes == 5):
+        print ('Maio')
+    elif (mes == 6):
+        print ('Junho')
+    elif (mes == 7):
+        print ('Julho')
+    elif (mes == 8):
+        print ('Agosto')
+    elif (mes == 9):
+        print ('Setembro')
+    elif (mes == 10):
+        print ('Outubro')
+    elif (mes == 11):
+        print ('Novembro')
+    elif (mes == 12):
+        print ('Dezembro')
+    else:
+        print ('Mês inválido!')
 
 #19. Em um campeonato nacional de arco-e-flecha, tem-se equipes de três jogadores
 #para cada estado. Sabendo-se que os arqueiros de uma equipe não obtiveram o
@@ -197,6 +265,7 @@ def q13():
 #• Mostrar esses valores em ordem decrescente;
 #• Se a soma dos pontos for maior do que 100, imprimir a média aritmética entre eles,
 #  caso contrário, imprimir a mensagem "Equipe desclassificada".
+
 
 #20. O banco XXX concederá um crédito especial com juros de 2% aos seus clientes de
 #acordo com o saldo médio no último ano. Faça um programa que leia o saldo médio
