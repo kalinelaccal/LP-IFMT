@@ -1,6 +1,13 @@
 from datetime import date, datetime
 hoje = datetime.now()
 
+#importar biblioteca para traduzir:
+from deep_translator import GoogleTranslator # pip3 install deep-translator
+
+HOJE = datetime.now()
+tradutor = GoogleTranslator(source = 'en', target = 'pt')
+
+
 #1. Faça um programa que leia dois valores numéricos inteiros e efetue
 #   a adição, caso o resultado seja maior que 10, apresentá-lo.
 def q1():
@@ -228,34 +235,43 @@ def q17():
 #18. Faça um programa que leia um número inteiro entre 1 e 12 e escreva o mês
 #correspondente. Caso o usuário digite um número fora desse intervalo, deverá
 #aparecer uma mensagem informando que não existe mês com este número.
+# def q18():
+#     mes = int(input('Insira o número do mês (de 1 a 12): '))
+#     if (mes == 1):
+#         print ('Janeiro')
+#     elif (mes == 2):
+#         print ('Fevereiro')
+#     elif (mes == 3):
+#         print ('Março')
+#     elif (mes == 4):
+#         print ('Abril')
+#     elif (mes == 5):
+#         print ('Maio')
+#     elif (mes == 6):
+#         print ('Junho')
+#     elif (mes == 7):
+#         print ('Julho')
+#     elif (mes == 8):
+#         print ('Agosto')
+#     elif (mes == 9):
+#         print ('Setembro')
+#     elif (mes == 10):
+#         print ('Outubro')
+#     elif (mes == 11):
+#         print ('Novembro')
+#     elif (mes == 12):
+#         print ('Dezembro')
+#     else:
+#         print ('Mês inválido!')
+
 def q18():
-    mes = int(input('Insira o número do mês (de 1 a 12): '))
-    if (mes == 1):
-        print ('Janeiro')
-    elif (mes == 2):
-        print ('Fevereiro')
-    elif (mes == 3):
-        print ('Março')
-    elif (mes == 4):
-        print ('Abril')
-    elif (mes == 5):
-        print ('Maio')
-    elif (mes == 6):
-        print ('Junho')
-    elif (mes == 7):
-        print ('Julho')
-    elif (mes == 8):
-        print ('Agosto')
-    elif (mes == 9):
-        print ('Setembro')
-    elif (mes == 10):
-        print ('Outubro')
-    elif (mes == 11):
-        print ('Novembro')
-    elif (mes == 12):
-        print ('Dezembro')
+    mes = int(input('Digite o número do mês: '))
+    if mes < 1 or mes > 12:
+        print('Mês Inválido!')
     else:
-        print ('Mês inválido!')
+        data = datetime.strptime(f'01/{mes}/24','%d/%m/%y') #criar uma data a prtir do número informado no input (%Y = ano por extenso, %y ano c/ 2 digitos).
+        mes_extenso = data.strftime('%B') #escrever o mes por extenso (english), %B mes por extenso, %b mês por extenso abreviado.
+        print(tradutor.translate(mes_extenso)) #traduzir o mês. Depende da biblioteca importada no inicio (linha 5).
 
 #19. Em um campeonato nacional de arco-e-flecha, tem-se equipes de três jogadores
 #para cada estado. Sabendo-se que os arqueiros de uma equipe não obtiveram o
@@ -288,7 +304,19 @@ def q19():
 #de 501 a 1000 30% do valor do saldo médio
 #de 1001 a 3000 40% do valor do saldo médio
 #acima de 3001 50% do valor do saldo médio
-
+def q20():
+    saldomedio = float(input('Insira o saldo médio: '))
+    if (0 <= saldomedio <= 500):
+        print (f'Saldo médio: {saldomedio} \nCrédito aprovado: R$00.00')
+    elif (501 <= saldomedio <= 1000):
+        print (f'Saldo médio: {saldomedio} \nCrédito aprovado: R${round(saldomedio*0.3,2)}')
+    elif (1001 <= saldomedio <= 3000):
+        print (f'Saldo médio: {saldomedio} \nCrédito aprovado: R${round(saldomedio*0.4,2)}')
+    elif (3001 <= saldomedio):
+        print (f'Saldo médio: {saldomedio} \nCrédito aprovado: R${round(saldomedio*0.5,2)}')
+    else:
+        print('Valor inválido.')
+        
 #21. A biblioteca de uma Universidade deseja fazer um programa que leia o nome do
 #livro que será emprestado, o tipo de usuário (professor ou aluno) e possa
 #imprimir um recibo conforme mostrado a seguir. Considerar que o professor
@@ -296,10 +324,18 @@ def q19():
 #• Nome do livro:
 #• Tipo de usuário:
 #• Total de dias:
+def q21():
+    livro = input('Nome do livro: ')
+    usuario = int(input('Tipo de usuário: \n1 - Aluno \n2 - Professor: '))
+    if usuário == 1:
+        print(f'Nome do livro: {livro} \nTipo de usuário: Aluno \nTotal de dias para devolução: 3')
+    elif usuário == 2:
+        print(f'Nome do livro: {livro} \nTipo de usuário: Professor \nTotal de dias para devolução: 10')
 
 #22. Construa um programa que leia o percurso em quilômetros, o tipo do carro e
 #informe o consumo estimado de combustível, sabendo-se que um carro tipo A faz
 #12 km com um litro de gasolina, um tipo B faz 9 km e o tipo C 8 km por litro.
+def q22():
 
 #23. Crie um programa que informe a quantidade total de calorias de uma refeição
 #a partir da escolha do usuário que deverá informar o prato, a sobremesa, e
@@ -309,6 +345,49 @@ def q19():
 #Peixe          230cal Sorvete diet     110cal Suco de laranja   70cal
 #Frango         250cal Mousse diet      170cal Suco de melão     100cal
 #Carne          350cal Mousse chocolate 200cal Refrigerante diet 65cal
+def q23():
+    prato = int(input('''
+        Pratos:
+    1 - Vegetariano
+    2 - Peixe
+    3 - Frango
+    4 - Carne
+    Digite a opção desejada:
+    '''))
+
+    bebida = int(input('''
+    Bebidas:
+    1 - Chá
+    2 - Suco de laranja
+    3 - Suco de melão
+    4 - Refrigerante diet
+    Digite a opção desejada:
+    '''))
+    
+    sobremesa = int(input( '''
+    Sobresemas: 
+    1 - Abacaxi
+    2 - Sorvete diet
+    3 - Mousse diet
+    4 - Mousse chocolate
+    Digite a opção desejada:
+    '''))
+
+    cal = 0
+    cal += 180 if prato == 1 else 0
+    cal += 230 if prato == 2 else 0
+    cal += 250 if prato == 3 else 0
+    cal += 350 if prato == 4 else 0    
+    cal += 20 if bebida == 1 else 0
+    cal += 70 if bebida == 2 else 0
+    cal += 100 if bebida == 3 else 0
+    cal += 65 if bebida == 4 else 0    
+    cal += 75 if sobremesa == 1 else 0
+    cal += 110 if sobremesa == 2 else 0
+    cal += 170 if sobremesa == 3 else 0
+    cal += 200 if sobremesa == 4 else 0
+
+    print(f'Total de calorias: {cal}')
 
 #24. A polícia rodoviária resolveu fazer cumprir a lei e vistoriar veículos para
 #cobrar dos motoristas o DUT. Sabendo-se que o mês em que o emplacamento do
