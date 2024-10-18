@@ -343,6 +343,7 @@ def q22():
     3 - Carro tipo C (8km/L)
     Digite a opção:
     '''))
+    consumo = 
 
 
 #23. Crie um programa que informe a quantidade total de calorias de uma refeição
