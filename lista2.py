@@ -336,6 +336,14 @@ def q21():
 #informe o consumo estimado de combustível, sabendo-se que um carro tipo A faz
 #12 km com um litro de gasolina, um tipo B faz 9 km e o tipo C 8 km por litro.
 def q22():
+    percurso = float(input('Insira o tamanho do percurso(km): '))
+    tipocarro = int(input('''
+    1 - Carro tipo A (12km/L)
+    2 - Carro tipo B (9km/L)
+    3 - Carro tipo C (8km/L)
+    Digite a opção:
+    '''))
+
 
 #23. Crie um programa que informe a quantidade total de calorias de uma refeição
 #a partir da escolha do usuário que deverá informar o prato, a sobremesa, e
@@ -394,6 +402,8 @@ def q23():
 #carro deve ser renovado é determinado pelo último número da placa do mesmo,
 #faça um programa que, a partir da leitura da placa do carro, informe o mês
 #em que o emplacamento deve ser renovado.
+def q24():
+
 
 #25. A prefeitura contratou uma firma especializada para manter os níveis de
 #poluição considerados ideais para um país do 1º mundo. As indústrias,
