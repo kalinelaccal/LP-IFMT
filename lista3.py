@@ -1,3 +1,5 @@
+# funções python
+# https://www.w3schools.com/python/python_strings_methods.asp
 
 #Lista de Exercícios referentes a estruturas de iteração (repetição)
 
@@ -38,7 +40,7 @@ def q4():
     while (count < 3):
         nome = input('Nome: ')
         idade = int(input('Idade: '))
-        sexo = input('Sexo (F/M): ')[0].upper()
+        sexo = input('Sexo (F/M): ')[0].upper() #.upper() tranforma em maiúsculo | .strip() tira espaços
         count += 1 
         
         if (idade > 21) and (sexo == 'M'):
@@ -47,8 +49,17 @@ def q4():
 #5. Sabendo-se que a unidade lógica e aritmética calcula o produto através de somas
 #sucessivas, crie um programa que calcule o produto de dois números inteiros
 #lidos. Suponha que os números lidos sejam positivos.
-def q5():
+def q5(): 
+    num1 = int(input('1º Número: '))
+    num2 = int(input('2º Número: '))
+    count = 0
+    soma = 0
+    while (count <= num1):
+        soma = soma + num2
+        count += 1
+    print (soma)
     
+
 
 #6. Crie um programa que imprima os 20 primeiros termos da série de Fibonacci.
 #Observação: os dois primeiros termos desta série são 1 e 1 e os demais são gerados
