@@ -1,7 +1,7 @@
 
 #Lista de Exercícios referentes a estruturas de iteração (repetição)
 
-def exampleFor():
+def ex1():
     for x in range(10):
         print(x)
     for x in range(1,10,2): #(inicio(.),fim(°),intervalo)
@@ -9,25 +9,46 @@ def exampleFor():
     for x in range (10,1,-1):
         print(x)
 
-def exampleWhile():
+def ex2():
     option = -1
     while option != 0:
         option = int(input('Choose an option (0 to exit):'))
         print(option)
 
 #1.Faça um programa que imprima todos os números de 1 até 100.
+def q1():
+    for num in range (1,101):
+        print(num)
 
 #2. Faça um programa que imprima todos os números pares de 100 até 1.
+def q2():
+    for num in range (100,0,-1):
+        print (num)
 
 #3. Faça um programa que imprima os múltiplos de 5, no intervalo de 1 até 500.
+def q3():
+    for num in range (0,501,5):
+        print(num)
 
 #4. Faça umprograma que permita entrar com o nome, a idade e o sexo de 20
 #pessoas.O programa deve imprimir o nome da pessoa se ela for do sexo masculino
 #e tiver mais de 21 anos.
+def q4():
+    count = 0
+    while (count < 3):
+        nome = input('Nome: ')
+        idade = int(input('Idade: '))
+        sexo = input('Sexo (F/M): ')[0].upper()
+        count += 1 
+        
+        if (idade > 21) and (sexo == 'M'):
+            print (f'{nome} tem mais de 21 anos.')
 
 #5. Sabendo-se que a unidade lógica e aritmética calcula o produto através de somas
 #sucessivas, crie um programa que calcule o produto de dois números inteiros
 #lidos. Suponha que os números lidos sejam positivos.
+def q5():
+    
 
 #6. Crie um programa que imprima os 20 primeiros termos da série de Fibonacci.
 #Observação: os dois primeiros termos desta série são 1 e 1 e os demais são gerados
@@ -273,3 +294,6 @@ def exampleWhile():
 #analisadas.
 #Obs.: Para encerrar a entrada de dados, digite um número menor que zero para a
 #idade.
+
+questao = int(input('Qual questão executar? '))
+eval(f'q{questao}()')
