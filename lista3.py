@@ -82,7 +82,7 @@ def q5():
             soma = soma + num2
             count += 1
         if (count == num1):
-            print (soma)
+            print (f'{num1} * {num2} = {soma}')
     # for _ in range(num1):
     # soma += num2
 
@@ -93,6 +93,9 @@ def q5():
 #• 1 + 1 = 2, terceiro termo;
 #• 1 + 2 = 3, quarto termo, etc.
 # 1 1 2 3 5 8 13 21
+#def q6():
+
+
 
 #7. Crie um programa que permita entrar com o nome, a nota da
 #prova 1 e da prova 2 de 15 alunos. Ao final, imprimir uma listagem, contendo:
