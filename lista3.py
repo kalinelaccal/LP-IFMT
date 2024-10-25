@@ -50,15 +50,41 @@ def q4():
 #sucessivas, crie um programa que calcule o produto de dois números inteiros
 #lidos. Suponha que os números lidos sejam positivos.
 def q5(): 
-    num1 = int(input('1º Número: '))
-    num2 = int(input('2º Número: '))
-    count = 0
-    soma = 0
-    while (count <= num1):
-        soma = soma + num2
-        count += 1
-    print (soma)
-    
+    erro = True
+    num1 = 0
+    num2 = 0
+    while erro == True:
+        try:    
+            num1 = int(input('1º Número: '))
+        except ValueError:
+            print('Erro 01: Valor inválido! \nDigite um número inteiro.')
+        except:
+            print('Erro 404: Not Found.')
+        else:
+            erro = False
+        finally: 
+            print('...')
+    erro = True
+    while erro == True:
+        try:
+            num2 = int(input('2º Número: '))
+        except ValueError:
+            print('Erro 01: Valor inválido! \nDigite um número inteiro.')
+        except:
+            print('Erro 404: Not Found.')
+        else:
+            erro = False
+        finally: 
+            print('...')
+        count = 0
+        soma = 0
+        while (count < num1):
+            soma = soma + num2
+            count += 1
+        if (count == num1):
+            print (soma)
+    # for _ in range(num1):
+    # soma += num2
 
 
 #6. Crie um programa que imprima os 20 primeiros termos da série de Fibonacci.
