@@ -40,7 +40,7 @@ def q4():
     while (count < 3):
         nome = input('Nome: ')
         idade = int(input('Idade: '))
-        sexo = input('Sexo (F/M): ')[0].upper() #.upper() tranforma em maiúsculo | .strip() tira espaços
+        sexo = input('Sexo (F/M): ')[0].upper() #.upper() transforma em maiúsculo | .strip() tira espaços
         count += 1 
         
         if (idade > 21) and (sexo == 'M'):
@@ -93,7 +93,18 @@ def q5():
 #• 1 + 1 = 2, terceiro termo;
 #• 1 + 2 = 3, quarto termo, etc.
 # 1 1 2 3 5 8 13 21
-#def q6():
+def q6():
+    num1 = 0
+    num2 = 1
+    soma = 0
+    print(num2)
+    for count in range(1,20):
+        soma = num1 + num2
+        num1 = num2
+        num2 = soma
+        print(soma)
+    
+    
 
 
 
