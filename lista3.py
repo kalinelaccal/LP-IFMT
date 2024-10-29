@@ -98,20 +98,23 @@ def q6():
     num2 = 1
     soma = 0
     print(num2)
-    for count in range(1,20):
+    for count in range(1,21):
         soma = num1 + num2
         num1 = num2
         num2 = soma
         print(soma)
-    
-    
-
-
 
 #7. Crie um programa que permita entrar com o nome, a nota da
 #prova 1 e da prova 2 de 15 alunos. Ao final, imprimir uma listagem, contendo:
 #nome, nota da prova 1, nota da prova 2, e média das notas de cada aluno. Ao final,
 #imprimir a média geral da turma.
+# def q7():
+#     for num in range(1,16):
+#         nome[num] = input(f'Insira o nome do(a) {num}° aluno(a): ')
+#     for num in range(1,16):
+#         print(nome[num])
+#incompleta
+
 
 #8. Faça umprograma que permita entrar com o nome e o salário bruto de 10 pessoas.
 #Após ler os dados, imprimir o nome e o valor da alíquota do imposto de renda
@@ -120,6 +123,24 @@ def q6():
 #Salário menor que R$1300,00 Isento
 #Salário maior ou igual a R$1300,00 e menor que R$2300,00 10% do salário bruto
 #Salário maior ou igual a R$2300,00 15% do salário bruto
+def q8():
+    count = 0
+    while (count < 3):
+        nome = input('Nome: ')
+        salario = float(input('Salário bruto: R$'),2)
+        if (salario < 1300):
+            print(f'IRRF: Isento.')
+        if (1300 <= salario < 2300):
+            print (f'IRRF: R${salario*0.1}.')
+        if (2300 <= salario):
+            print (f'IRRF: R${salario*0.15}.')
+
+        count += 1 
+        
+        # if (idade > 21) and (sexo == 'M'):
+        #     print (f'{nome} tem mais de 21 anos.')
+
+
 
 #9. No dia da estréia do filme "Procurando Dory", uma grande emissora de TV realizou
 #uma pesquisa logo após o encerramento do filme. Cada espectador respondeu
