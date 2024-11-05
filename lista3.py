@@ -147,13 +147,14 @@ def q8():
 #• A percentagem de pessoas que responderam bom entre todos os expectadores
 #analisados.
 def q9():
+    somaId = 0
     count = 0
     while (count <= 3):    
         erro = True
         while (erro == True):
             try:    
                 idade = int(input('Idade: ')) 
-                somaId = int(somaId + idade)
+                somaId += idade)
             except ValueError:
                 print('Erro 01: Valor inválido! \nDigite um número inteiro.')
             else:
