@@ -125,7 +125,7 @@ def q6():
 #Salário maior ou igual a R$2300,00 15% do salário bruto
 def q8():
     count = 0
-    while (count < 3):
+    while (count <= 10):
         nome = input('Nome: ')
         salario = float(input('Salário bruto: R$'),2)
         if (salario < 1300):
@@ -136,11 +136,6 @@ def q8():
             print (f'IRRF: R${salario*0.15}.')
 
         count += 1 
-        
-        # if (idade > 21) and (sexo == 'M'):
-        #     print (f'{nome} tem mais de 21 anos.')
-
-
 
 #9. No dia da estréia do filme "Procurando Dory", uma grande emissora de TV realizou
 #uma pesquisa logo após o encerramento do filme. Cada espectador respondeu
@@ -151,7 +146,70 @@ def q8():
 #• A quantidade de pessoas que responderam regular;
 #• A percentagem de pessoas que responderam bom entre todos os expectadores
 #analisados.
+def q9():
+    count = 0
+    while (count <= 3):    
+        erro = True
+        while (erro == True):
+            try:    
+                idade = int(input('Idade: ')) 
+                somaId = int(somaId + idade)
+            except ValueError:
+                print('Erro 01: Valor inválido! \nDigite um número inteiro.')
+            else:
+                erro = False
+        erro = True
+        while (erro == True):
+            try:
+                opiniao = int(input('''
+                1 - Regular
+                2 - Bom
+                3 - Excelente
+                Digite sua opinião (de 1 a 3):
+                '''))
+                if (opiniao < 1 or opiniao > 3):
+                    raise BaseException('Erro 01: Valor inválido! \nDigite um número de 1 a 3.') #cria um erro fora do except
+                if (opiniao == 1):
+                    somaIdReg = int(somaIdReg + idade)
+                    somaReg += 1
+                if (opiniao == 2):
+                    somaIdBom = int(somaIdBom + idade)
+                    somaBom += 1
+                if (opiniao == 3):
+                    somaIdExe = int(somaIdExe + idade)
+                    somaExe += 1
 
+            except ValueError:
+                print('Erro 01: Valor inválido! \nDigite um número inteiro.')
+                erro = True
+            except BaseException as e:
+                print(e)
+                erro = True
+            else:
+                erro = False
+                count += 1
+
+    print('------ Resultados ------')
+    print(f'''
+    Pessoas entrevistadas: {count}
+    Média das idades Geral: {somaId/count}
+
+    Responderam Regular: 
+    Média das idades: {somaIdReg/count} 
+    {somaReg} Pessoas
+    {(somaReg*100)/count}% do total
+
+    ''')
+
+# while erro == True:
+#         try:
+#             num2 = int(input('2º Número: '))
+#         except ValueError:
+#             print('Erro 01: Valor inválido! \nDigite um número inteiro.')
+#         except:
+#             print('Erro 404: Not Found.')
+#         else:
+#             erro = False
 #10. Em um campeonato Europeu de Volleyball, se inscreveram 30 países. Sabendo-se
 #que na lista oficial de cada país consta, além de outros dados, peso e idade de 12
 #jogadores, crie um programa que apresente as seguintes informações:
