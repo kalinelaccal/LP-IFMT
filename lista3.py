@@ -2,6 +2,7 @@
 # https://www.w3schools.com/python/python_strings_methods.asp
 
 #Lista de Exercícios referentes a estruturas de iteração (repetição)
+import random
 
 def ex1():
     for x in range(10):
@@ -108,12 +109,9 @@ def q6():
 #prova 1 e da prova 2 de 15 alunos. Ao final, imprimir uma listagem, contendo:
 #nome, nota da prova 1, nota da prova 2, e média das notas de cada aluno. Ao final,
 #imprimir a média geral da turma.
-# def q7():
-#     for num in range(1,16):
-#         nome[num] = input(f'Insira o nome do(a) {num}° aluno(a): ')
-#     for num in range(1,16):
-#         print(nome[num])
-#incompleta
+ #def q7():
+
+
 
 
 #8. Faça umprograma que permita entrar com o nome e o salário bruto de 10 pessoas.
@@ -148,13 +146,19 @@ def q8():
 #analisados.
 def q9():
     somaId = 0
+    somaIdReg = 0
+    somaIdBom = 0
+    somaIdExe = 0
+    somaReg = 0
+    somaBom = 0
+    somaExe = 0
     count = 0
-    while (count <= 3):    
+    while (count < 3):    
         erro = True
         while (erro == True):
             try:    
                 idade = int(input('Idade: ')) 
-                somaId += idade)
+                somaId += idade
             except ValueError:
                 print('Erro 01: Valor inválido! \nDigite um número inteiro.')
             else:
@@ -190,27 +194,30 @@ def q9():
                 erro = False
                 count += 1
 
-    print('------ Resultados ------')
     print(f'''
+    ----------- Resultados -----------
+
+
     Pessoas entrevistadas: {count}
-    Média das idades Geral: {somaId/count}
+    Média das idades Geral: {round((somaId/count),2)}
 
     Responderam Regular: 
-    Média das idades: {somaIdReg/count} 
     {somaReg} Pessoas
-    {(somaReg*100)/count}% do total
+    Média das idades: {round((somaIdReg/count),2)} 
+    {round(((somaReg*100)/count),2)}% do total
+
+    Responderam Bom: 
+    {somaBom} Pessoas
+    Média das idades: {round((somaIdBom/count),2)} 
+    {round(((somaBom*100)/count),2)}% do total
+
+    Responderam Exelente: 
+    {somaExe} Pessoas
+    Média das idades: {round((somaIdExe/count),2)} 
+    {round(((somaExe*100)/count),2)}% do total
 
     ''')
 
-# while erro == True:
-#         try:
-#             num2 = int(input('2º Número: '))
-#         except ValueError:
-#             print('Erro 01: Valor inválido! \nDigite um número inteiro.')
-#         except:
-#             print('Erro 404: Not Found.')
-#         else:
-#             erro = False
 #10. Em um campeonato Europeu de Volleyball, se inscreveram 30 países. Sabendo-se
 #que na lista oficial de cada país consta, além de outros dados, peso e idade de 12
 #jogadores, crie um programa que apresente as seguintes informações:
@@ -219,7 +226,44 @@ def q9():
 #• O atleta mais pesado de cada time;
 #• O atleta mais jovem de cada time;
 #• O peso médio e a idade média de todos os participantes.
-    
+
+def q10():
+#    x = random.randint(1,10)
+# x = random.randint(40,120) + random,random()
+# print (x)
+
+# criar lista com 30 paises com 12 jogadores
+#peso e idade aleatorios pra cada pais
+    pais1 = 'Austrália'
+    pais2 = 'Brasil'
+    pais3 = 'Canada'
+    PESOp1j1 = round((random.randint(50,100) + random.random()),2)
+    PESOp1j2 = round((random.randint(50,100) + random.random()),2)
+    PESOp1j3 = round((random.randint(50,100) + random.random()),2)
+    PESOp2j1 = round((random.randint(50,100) + random.random()),2)
+    PESOp2j2 = round((random.randint(50,100) + random.random()),2)
+    PESOp2j3 = round((random.randint(50,100) + random.random()),2)
+    PESOp3j1 = round((random.randint(50,100) + random.random()),2)
+    PESOp3j2 = round((random.randint(50,100) + random.random()),2)
+    PESOp3j3 = round((random.randint(50,100) + random.random()),2)
+    IDADEp1j1 = random.randint(17,60)
+    IDADEp1j2 = random.randint(17,60)
+    IDADEp1j3 = random.randint(17,60)
+    IDADEp2j1 = random.randint(17,60)
+    IDADEp2j2 = random.randint(17,60)
+    IDADEp2j3 = random.randint(17,60)
+    IDADEp3j1 = random.randint(17,60)
+    IDADEp3j2 = random.randint(17,60)
+    IDADEp3j3 = random.randint(17,60)
+
+    print(f'''
+    {PESOp1j1,PESOp1j2,PESOp1j3}
+    ''')
+
+
+
+
+
 #11. Construa um programa que leia vários números e informe quantos números
 #entre 100 e 200 foram digitados. Quando o valor 0 (zero) for lido, o algoritmo
 #deverá cessar sua execução.
