@@ -1,3 +1,7 @@
+import random
+
+
+
 # funções python
 # https://www.w3schools.com/python/python_strings_methods.asp
 
@@ -42,20 +46,20 @@ def q4():
         nome = input('Nome: ')
         idade = int(input('Idade: '))
         sexo = input('Sexo (F/M): ')[0].upper() #.upper() transforma em maiúsculo | .strip() tira espaços
-        count += 1 
-        
+        count += 1
+
         if (idade > 21) and (sexo == 'M'):
             print (f'{nome} tem mais de 21 anos.')
 
 #5. Sabendo-se que a unidade lógica e aritmética calcula o produto através de somas
 #sucessivas, crie um programa que calcule o produto de dois números inteiros
 #lidos. Suponha que os números lidos sejam positivos.
-def q5(): 
+def q5():
     erro = True
     num1 = 0
     num2 = 0
     while erro == True:
-        try:    
+        try:
             num1 = int(input('1º Número: '))
         except ValueError:
             print('Erro 01: Valor inválido! \nDigite um número inteiro.')
@@ -63,7 +67,7 @@ def q5():
             print('Erro 404: Not Found.')
         else:
             erro = False
-        finally: 
+        finally:
             print('...')
     erro = True
     while erro == True:
@@ -75,7 +79,7 @@ def q5():
             print('Erro 404: Not Found.')
         else:
             erro = False
-        finally: 
+        finally:
             print('...')
         count = 0
         soma = 0
@@ -133,7 +137,7 @@ def q8():
         if (2300 <= salario):
             print (f'IRRF: R${salario*0.15}.')
 
-        count += 1 
+        count += 1
 
 #9. No dia da estréia do filme "Procurando Dory", uma grande emissora de TV realizou
 #uma pesquisa logo após o encerramento do filme. Cada espectador respondeu
@@ -153,11 +157,11 @@ def q9():
     somaBom = 0
     somaExe = 0
     count = 0
-    while (count < 3):    
+    while (count < 3):
         erro = True
         while (erro == True):
-            try:    
-                idade = int(input('Idade: ')) 
+            try:
+                idade = int(input('Idade: '))
                 somaId += idade
             except ValueError:
                 print('Erro 01: Valor inválido! \nDigite um número inteiro.')
@@ -201,19 +205,19 @@ def q9():
     Pessoas entrevistadas: {count}
     Média das idades Geral: {round((somaId/count),2)}
 
-    Responderam Regular: 
+    Responderam Regular:
     {somaReg} Pessoas
-    Média das idades: {round((somaIdReg/count),2)} 
+    Média das idades: {round((somaIdReg/count),2)}
     {round(((somaReg*100)/count),2)}% do total
 
-    Responderam Bom: 
+    Responderam Bom:
     {somaBom} Pessoas
-    Média das idades: {round((somaIdBom/count),2)} 
+    Média das idades: {round((somaIdBom/count),2)}
     {round(((somaBom*100)/count),2)}% do total
 
-    Responderam Exelente: 
+    Responderam Exelente:
     {somaExe} Pessoas
-    Média das idades: {round((somaIdExe/count),2)} 
+    Média das idades: {round((somaIdExe/count),2)}
     {round(((somaExe*100)/count),2)}% do total
 
     ''')
@@ -228,45 +232,104 @@ def q9():
 #• O peso médio e a idade média de todos os participantes.
 
 def q10():
-#    x = random.randint(1,10)
-# x = random.randint(40,120) + random,random()
-# print (x)
 
-# criar lista com 30 paises com 12 jogadores
-#peso e idade aleatorios pra cada pais
+# Reduzido para 3 países, 3 jogadores cada.
+#peso e idade aleatorios pra cada jogador.
     pais1 = 'Austrália'
     pais2 = 'Brasil'
-    pais3 = 'Canada'
-    PESOp1j1 = round((random.randint(50,100) + random.random()),2)
-    PESOp1j2 = round((random.randint(50,100) + random.random()),2)
-    PESOp1j3 = round((random.randint(50,100) + random.random()),2)
-    PESOp2j1 = round((random.randint(50,100) + random.random()),2)
-    PESOp2j2 = round((random.randint(50,100) + random.random()),2)
-    PESOp2j3 = round((random.randint(50,100) + random.random()),2)
-    PESOp3j1 = round((random.randint(50,100) + random.random()),2)
-    PESOp3j2 = round((random.randint(50,100) + random.random()),2)
-    PESOp3j3 = round((random.randint(50,100) + random.random()),2)
-    IDADEp1j1 = random.randint(17,60)
-    IDADEp1j2 = random.randint(17,60)
-    IDADEp1j3 = random.randint(17,60)
-    IDADEp2j1 = random.randint(17,60)
-    IDADEp2j2 = random.randint(17,60)
-    IDADEp2j3 = random.randint(17,60)
-    IDADEp3j1 = random.randint(17,60)
-    IDADEp3j2 = random.randint(17,60)
-    IDADEp3j3 = random.randint(17,60)
+    pais3 = 'Canadá' 
 
-    print(f'''
-    {PESOp1j1,PESOp1j2,PESOp1j3}
-    ''')
+    peso = [[round((random.randint(50,100) + random.random()),2) for _ in range(3)] for _ in range(3)] #cria matriz 3x3 com rand 50-100 + rand float 0-1 
+    idade = [[random.randint(17,60) for _ in range(3)] for _ in range(3)] #cria matriz 3x3 com rand 17-60 para idade
+ 
+    # for a in peso:
+    #     print(a)
+    # for a in idade:
+    #     print(a)
 
+    jpesado = [999,999,999]
+    pesado = [0,0,0]
+    jjovem = [999,999,999]
+    jovem = [999,999,999]
+    for p in range(3):
+        for j in range(0,3):
+            if jovem[p] > idade[p][j]:    # verificação idades por país [p] pais e [j] jogador
+                jovem[p] = idade[p][j]    # se a idade for maior do que a última verificada, a variável passa a receber o valor da atual (maior)
+                jjovem[p] = j+1           # para identificação do "Jogador {jjovem[0]}" no print mais em baixo. Índice +1, pq começa em 0.
+            if pesado[p] < peso [p][j]:   # mesmo procedimento, mas agora para peso. 
+                pesado[p] = peso[p][j]    # o mais pesado é o que prevalece
+                jpesado[p] = j+1          # para identificação do "Jogador {jpesado[0]}" no print abaixo. Índice +1, pq começa em 0.
+     
 
+    print (f'''
+    Lista oficial
 
+    |{pais1}:
+    |
+    |Jogador 1: {idade[0][0]} anos, {peso[0][0]}kg
+    |Jogador 2: {idade[0][1]} anos, {peso[0][1]}kg
+    |Jogador 3: {idade[0][2]} anos, {peso[0][2]}kg
+    |
+    |Idade média do time: {round(((idade[0][0] + idade[0][1] + idade[0][2])/3),2)}
+    |Peso médio do time: {round(((peso[0][0] + peso[0][1] + peso[0][2])/3),2)}
+    |Jogador mais jovem do time: Jogador {jjovem[0]} - {jovem[0]} anos.
+    |Jogador mais pesado do time: Jogador {jpesado[0]} - {pesado[0]}kg.
+
+    |{pais2}:
+    |
+    |Jogador 1: {idade[1][0]} anos, {peso[1][0]}kg
+    |Jogador 2: {idade[1][1]} anos, {peso[1][1]}kg
+    |Jogador 3: {idade[1][2]} anos, {peso[1][2]}kg
+    |
+    |Idade média do time: {round(((idade[1][0] + idade[1][1] + idade[1][2])/3),2)}
+    |Peso médio do time: {round(((peso[1][0] + peso[1][1] + peso[1][2])/3),2)}
+    |Jogador mais jovem do time: Jogador {jjovem[1]} - {jovem[1]} anos.
+    |Jogador mais pesado do time: Jogador {jpesado[1]} - {pesado[1]}kg.
+
+    |{pais3}:
+    |
+    |Jogador 1: {idade[2][0]} anos, {peso[2][0]}kg
+    |Jogador 2: {idade[2][1]} anos, {peso[2][1]}kg
+    |Jogador 3: {idade[2][2]} anos, {peso[2][2]}kg
+    |
+    |Idade média do time: {round(((idade[2][0] + idade[2][1] + idade[2][2])/3),2)}
+    |Peso médio do time: {round(((peso[2][0] + peso[2][1] + peso[2][2])/3),2)}
+    |Jogador mais jovem do time: Jogador {jjovem[2]} - {jovem[2]} anos.
+    |Jogador mais pesado do time: Jogador {jpesado[2]} - {pesado[2]}kg.
+            ''')
 
 
 #11. Construa um programa que leia vários números e informe quantos números
 #entre 100 e 200 foram digitados. Quando o valor 0 (zero) for lido, o algoritmo
 #deverá cessar sua execução.
+def q11():
+    controle = True
+    dentro = 0
+    fora = 0
+
+
+    while controle == True:
+        try:
+            num = int(input('Digite um número inteiro (0 para encerrar): '))
+            if (num == 0):
+                controle = False
+            if (100 <= num <= 200):
+                dentro += 1 
+            if (num < 100 or num > 200):
+                fora += 1
+        except ValueError:
+            print(f'''
+Erro 01: Valor inválido!
+Digite um número inteiro.
+
+''')
+        except:
+            print('Erro 404: Not Found.')
+    
+    print (f''' 
+    {dentro + fora} Números digitados no total.
+    {dentro} Números entre 100 e 200.
+    ''')
 
 #12. Dado um país A, com 5 milhões de habitantes e uma taxa de natalidade de 3% ao
 #ano, e um país B com 7 milhões de habitantes e uma taxa de natalidade de 2% ao
