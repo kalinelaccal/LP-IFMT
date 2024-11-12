@@ -335,6 +335,22 @@ Digite um número inteiro.
 #ano, e um país B com 7 milhões de habitantes e uma taxa de natalidade de 2% ao
 #ano, fazer um programa que calcule e imprima o tempo necessário para que a
 #população do país A ultrapasse a população do país B.
+def q12():
+    pahabit = 5000000
+    panatal = (pahabit*0.03)
+    pbhabit = 7000000
+    pbnatal = (pbhabit*0.02)
+    cont = 0
+
+    while pahabit <= pbhabit:
+        pahabit += panatal
+        pbhabit += pbnatal
+        panatal = (pahabit*0.03)
+        pbnatal = (pbhabit*0.02)
+        cont += 1
+
+    print(f'O país A, levará {cont} anos para ultrapassar o país B em população.')
+
 
 #13. Uma empresa de fornecimento de energia elétrica faz a leitura mensal dos medidores
 #de consumo. Para cada consumidor, são digitados os seguintes dados:
@@ -349,6 +365,7 @@ Digite um número inteiro.
 #• O custo total para cada consumidor
 #• O total de consumo para os três tipos de consumidor
 #• Amédia de consumo dos tipos 1 e 2
+
 
 #14. Faça um programa que leia vários números inteiros e apresente o fatorial de cada
 #número. O algoritmo encerra quando se digita um número menor do que 1.n
