@@ -1,3 +1,5 @@
+# https://github.com/preti-joao/documents/blob/main/python/introducao.md
+
 import random
 
 
@@ -365,6 +367,31 @@ def q12():
 #• O custo total para cada consumidor
 #• O total de consumo para os três tipos de consumidor
 #• Amédia de consumo dos tipos 1 e 2
+def q13():
+    cod = -1
+    conta = dict()
+    while True:
+        cod = int(input('Digite o número do consumidor (ou 0 para encerrar):'))
+        if cod == 0:
+            break
+        consumidor = input('''
+Digite o número referente ao tipo de consumidor:
+1 - Residencial
+2 - Comercial
+3 - Industrial
+''')
+        consumo = int(input('Digite o consumo em kWh:'))
+
+        if consumidor == '1':
+            conta[cod] = consumo*0.3
+        if consumidor == '2':
+            conta[cod] = consumo*0.5
+        if consumidor == '3':
+            conta[cod] = consumo*0.7
+
+    print(conta)
+
+
 
 
 #14. Faça um programa que leia vários números inteiros e apresente o fatorial de cada
